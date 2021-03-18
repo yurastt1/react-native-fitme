@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   text: {
     width: 323,
+    textAlign: "center",
     marginBottom: 224,
     marginTop: 30,
     fontFamily: 'Mont-SemiBold',
