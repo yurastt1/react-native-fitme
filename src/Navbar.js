@@ -5,7 +5,7 @@ import i18n from 'i18n-js';
 
 i18n.translations = {
   'uk-UA': { Diets: 'Дієта', Training: 'Тренування', Statistics: 'Статистика', Profile: 'Профіль'},
-  ja: { Diets: 'Diets', Training: 'Training', Statistics: 'Statistics', Profile: 'Profile'},
+  en: { Diets: 'Diets', Training: 'Training', Statistics: 'Statistics', Profile: 'Profile'},
 };
 
 i18n.locale = Localization.locale;
