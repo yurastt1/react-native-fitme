@@ -11,7 +11,7 @@ i18n.translations = {
 
 i18n.locale = 'en' //Localization.locale;
 
-export const YourGender = (props) => {
+export const YourGender = ({ navigation }, data) => {
   return (
     <View style={styles.container}>
       <View style={styles.steps}> 
@@ -26,7 +26,10 @@ export const YourGender = (props) => {
 
         <View style={styles.icons}>
           <TouchableOpacity
-            onPress={start}
+            onPress={()=>{
+              console.log(data);
+              navigation.navigate('YourGoal')
+            }}
             style={styles.left}
           >
           
@@ -38,7 +41,7 @@ export const YourGender = (props) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={start}
+            onPress={()=> navigation.navigate('YourGoal')}
             style={styles.right}
           >
           
@@ -54,17 +57,12 @@ export const YourGender = (props) => {
   )
 }
 
-const start = () => {
-  console.log(1);
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
   },
   icons: {
     flex: 1,
@@ -93,6 +91,7 @@ const styles = StyleSheet.create({
   },
   steps: {
     flexDirection: 'row',
+    marginTop: '20%',
   },
   step: {
     borderWidth: 1,

@@ -5,7 +5,7 @@ import i18n from 'i18n-js';
 
 i18n.translations = {
   'uk-UA': { Training: 'Тренування', Place: 'Тренування за областю', Full: 'Тренування всього тіла', Hands: 'Тренування рук', Abs: 'Тренування пресу', Settings: 'Тренування стегон', Legs: 'Тренування ніг', Type: 'Тренування за типом', Cardio: 'Кардіо', Pwr: 'Силові вправи', Stretching: 'Розтяжка'},
-  en: { Training: 'Training', Place: 'Body Place Training', Full: 'Full Body Training', Hands: 'Hands Training', Abs: 'ABS Training', Hips: 'Hips Training', Legs: 'Legs Training', Type: 'Training Type', Cardio: 'Cardio', Pwr: 'Power Training', Stretching: 'Stretching'},
+  'en-US': { Training: 'Training', Place: 'Body Place Training', Full: 'Full Body Training', Hands: 'Hands Training', Abs: 'ABS Training', Hips: 'Hips Training', Legs: 'Legs Training', Type: 'Training Type', Cardio: 'Cardio', Pwr: 'Power Training', Stretching: 'Stretching'},
 };
 
 export const Training = () => {
@@ -99,12 +99,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
   },
   title: {
     fontSize: 24,
     fontWeight: "800",
     textAlign: 'center',
+    marginTop: '20%',
+
   },
     subTitle: {
     fontSize: 18,

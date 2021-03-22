@@ -6,17 +6,17 @@ import i18n from 'i18n-js';
 
 i18n.translations = {
   'uk-UA': { Place: 'Місце', Home: 'ВДОМА', Gym: 'В ЗАЛІ', Save: 'Зберегти', Cancel: 'Відміна'},
-  en: { Place: 'Your Place', Home: 'AT HOME', Gym: 'In A Gym', Save: 'SAVE', Cancel: 'CANCEL'},
+  'en-US': { Place: 'Your Place', Home: 'AT HOME', Gym: 'In A Gym', Save: 'SAVE', Cancel: 'CANCEL'},
 };
 
-i18n.locale = 'en' //Localization.locale;
+i18n.locale = 'en-US' //Localization.locale;
 
-export const Place = (props) => {
+export const Place = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
       <View style={styles.top}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image 
             source={require ('./img/ArrowLeft.png')}
             style={styles.arrow}
@@ -64,14 +64,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
-    width: 323
   },
   top: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'flex-start',
+    marginTop: '20%',
+    marginLeft: '10%'
   },
 
   arrow: {
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     width: 161,
     fontWeight: "800",
-    marginLeft: '25%'
+    marginLeft: '20%'
   },
   input: {
     height: 27,
@@ -116,12 +116,12 @@ const styles = StyleSheet.create({
   buttonSave: {
     marginTop: 20,
     marginBottom: 20,
-    borderColor: '#03041A',
-    borderWidth: 2,
+    backgroundColor: '#03041A',
     borderRadius: 2,
     width: 323,
     height: 50,
     alignItems: 'center',
+    justifyContent: 'center',
     padding: 15,
   },
   buttonCancel: {
@@ -131,11 +131,12 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     width: 323,
     height: 50,
-    alignItems: 'center',
     padding: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   saveText: {
-    color: '#03041A',
+    color: 'white',
     fontSize: 16,
     fontWeight: 'bold'
   },

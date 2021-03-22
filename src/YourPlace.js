@@ -11,7 +11,7 @@ i18n.translations = {
 
 i18n.locale = 'en' //Localization.locale;
 
-export const YourPlace = (props) => {
+export const YourPlace = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.steps}> 
@@ -26,7 +26,7 @@ export const YourPlace = (props) => {
 
         <View style={styles.icons}>
           <TouchableOpacity
-            onPress={start}
+            onPress={()=> navigation.navigate('YourData')}
             style={styles.button}
           >
 
@@ -40,7 +40,7 @@ export const YourPlace = (props) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={start}
+            onPress={()=> navigation.navigate('YourData')}
             style={styles.button}
           >
             <View style={styles.bt__text}>
@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
   },
   title: {
     fontSize: 30,
@@ -108,7 +107,7 @@ const styles = StyleSheet.create({
   },
   steps: {
     flexDirection: 'row',
-    
+    marginTop: '20%',
   },
   step: {
     borderWidth: 1,

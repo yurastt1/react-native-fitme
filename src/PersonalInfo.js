@@ -6,19 +6,17 @@ import i18n from 'i18n-js';
 
 i18n.translations = {
   'uk-UA': { Data: 'Персональні дані', Gennder: 'Стать', Man: 'Чоловік', Woman: 'Жінка', Age: 'Вік', Weight: 'Вага', Height: 'Зріст', Years: 'р.', kg: 'кг', cm: 'см', Save: 'Зберегти', Cancel: 'Назад',  info: 'Важливо зібрати більше інформації про вас, щоб персоналізувати тренування та дієту.'},
-  en: { Data: 'Personal Info', Gender: 'Gender', Man: 'Man', Woman: 'Woman', Age: 'Age', Weight: 'Weight', Height: 'Height', Years: 'y.o', kg: 'kg', cm: 'cm', Save: 'Save', Cancel: 'Cancel', info: 'It’s important to gather more information about you to personalize training and diet.'},
+  'en-US': { Data: 'Personal Info', Gender: 'Gender', Man: 'Man', Woman: 'Woman', Age: 'Age', Weight: 'Weight', Height: 'Height', Years: 'y.o', kg: 'kg', cm: 'cm', Save: 'Save', Cancel: 'Cancel', info: 'It’s important to gather more information about you to personalize training and diet.'},
 };
 
-i18n.locale = 'en' //Localization.locale;
-
-export const PersonalInfo = (props) => {
+export const PersonalInfo = ({ navigation }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
   return (
     <View style={styles.container}>
       <View style={styles.top}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image 
             source={require ('./img/ArrowLeft.png')}
             style={styles.arrow}
@@ -88,7 +86,7 @@ export const PersonalInfo = (props) => {
           <Text style={styles.saveText}>{i18n.t('Save')}</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={start}
+          onPress={() => navigation.goBack()}
           style={styles.buttonCancel}
         >
           <Text style={styles.cancelText}>{i18n.t('Cancel')}</Text>
@@ -107,14 +105,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
-    width: 323
   },
   top: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'flex-start',
+    marginTop: '20%',
+    marginLeft: 20,
   },
 
   arrow: {
@@ -129,7 +127,7 @@ const styles = StyleSheet.create({
   },
   icons: {
     marginBottom: 50,
-    marginTop: 50
+    marginTop: 15
   },
   input: {
     height: 27,
@@ -148,7 +146,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     width: 323,
-    paddingTop: 43
+    paddingTop: 50
   },
   inputTextLeft: {
     fontSize: 18,
@@ -168,6 +166,7 @@ const styles = StyleSheet.create({
     width: 323,
     height: 50,
     alignItems: 'center',
+    justifyContent: 'center',
     padding: 15,
   },
   buttonCancel: {
@@ -178,6 +177,7 @@ const styles = StyleSheet.create({
     width: 323,
     height: 50,
     alignItems: 'center',
+    justifyContent: 'center',
     padding: 15,
   },
   saveText: {

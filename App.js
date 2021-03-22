@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Navbar } from './src/Navbar'
 import { StartScreen } from './src/StartScreen'
@@ -12,17 +12,78 @@ import { PersonalInfo } from './src/PersonalInfo'
 import { Place } from './src/Place'
 import { Training } from './src/Training'
 import { Diets } from './src/Diets'
+import {NavigationContainer} from "@react-navigation/native"
+import {createStackNavigator, CreateStackNavigator} from '@react-navigation/stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import diets from './src/img/Diets.svg'
+import training from './src/img/Training.svg'
+import statistics from './src/img/Statistics.svg'
+import profile from './src/img/Profile.svg'
+import { Check } from './src/Check'
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 
+export default class App extends React.Component {
+  state= {
+    isLogged: false,
+  }
 
-export default function App() {
+  isLoggedChanger= () => {
+    this.setState((state)=>{
+      return {isLogged: !state.isLogged}
+    })
+    
+  } 
+  
+render() {
   return (
-    <View style={styles.container}>
+    this.state.isLogged ?
+    <NavigationContainer >
+       <Tab.Navigator
+      barStyle={{ paddingBottom: 48 }}
+      >
+        <Tab.Screen name="Diets" component={Diets} 
+          options={{
+            tabBarLabel: 'Diets',
+            tabBarIcon: (diets),
+          }}
+        />
+        <Tab.Screen name="Training" component={Training} 
+          options={{
+            tabBarLabel: 'Training',
+            tabBarIcon: (training),
+          }}
+        />
 
-      <Diets />
-  </View>
+        <Tab.Screen name="Stack1" component={(props) => <Check {...props} isLogged={this.state.isLogged} isLoggedChanger={this.isLoggedChanger} />} 
+          options={{
+            tabBarLabel: 'Profile',
+            tabBarIcon: (profile),
+          }}
+        />
+          
+      </Tab.Navigator> 
+    </NavigationContainer>
+    : 
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}>
+        <Stack.Screen name="Start" component={(props) => <StartScreen {...props} data={this.state.isLogged} />} />
+        <Stack.Screen name="YourGender" component={YourGender} />
+        <Stack.Screen name="YourGoal" component={YourGoal} />
+        <Stack.Screen name="YourPlace" component={YourPlace} />
+        <Stack.Screen name="YourData" component={(props) => <YourData {...props} isLogged={this.state.isLogged} isLoggedChanger={this.isLoggedChanger} />} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    
   );
 }
+}
+
 
 const styles = StyleSheet.create({
   container: {

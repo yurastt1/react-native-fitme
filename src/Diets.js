@@ -5,7 +5,7 @@ import i18n from 'i18n-js';
 
 i18n.translations = {
   'uk-UA': { Diets: 'Дієти', Regular: 'Регулярні дієти', Meat: '30-денна м’ясна дієта', Fish: '30-денна рибна дієта', Vegan: 'Веган', Green: '30-денна зелена дієта', Smoothie: '30-денна смузі-дієта'},
-  en: { Diets: 'Diets', Regular: 'Regular Diets', Meat: '30-day meat diet', Fish: '30-day fish diet', Vegan: 'For Vegan', Green: '30-day green diet', Smoothie: '30-day smoothie diet'},
+  'en-US': { Diets: 'Diets', Regular: 'Regular Diets', Meat: '30-day meat diet', Fish: '30-day fish diet', Vegan: 'For Vegan', Green: '30-day green diet', Smoothie: '30-day smoothie diet'},
 };
 
 export const Diets = () => {
@@ -63,12 +63,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
   },
   title: {
     fontSize: 24,
     fontWeight: "800",
     textAlign: 'center',
+    marginTop: '20%',
   },
     subTitle: {
     fontSize: 18,
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginTop: 21,
     marginBottom: 21,
-пше   },
+  },
   imgContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

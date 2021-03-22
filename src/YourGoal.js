@@ -11,7 +11,7 @@ i18n.translations = {
 
 i18n.locale = 'en' //Localization.locale;
 
-export const YourGoal = (props) => {
+export const YourGoal = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.steps}> 
@@ -26,7 +26,7 @@ export const YourGoal = (props) => {
 
         <View style={styles.icons}>
           <TouchableOpacity
-            onPress={start}
+            onPress={()=> navigation.navigate('YourPlace')}
             style={styles.button}
           >
 
@@ -41,7 +41,7 @@ export const YourGoal = (props) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={start}
+            onPress={()=> navigation.navigate('YourPlace')}
             style={styles.button}
           >
             <View style={styles.bt__text}>
@@ -56,7 +56,7 @@ export const YourGoal = (props) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={start}
+            onPress={()=> navigation.navigate('YourPlace')}
             style={styles.button}
           >
             <View style={styles.bt__text}>
@@ -75,7 +75,7 @@ export const YourGoal = (props) => {
 }
 
 const start = () => {
-  console.log(1);
+  
 }
 
 const styles = StyleSheet.create({
@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
   },
   title: {
     fontSize: 30,
@@ -125,7 +124,7 @@ const styles = StyleSheet.create({
   },
   steps: {
     flexDirection: 'row',
-    
+    marginTop: '20%',
   },
   step: {
     borderWidth: 1,

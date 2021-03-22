@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import {NavigationContainer} from "@react-navigation/native"
+import {createStackNavigator, CreateStackNavigator} from '@react-navigation/stack'
 
 i18n.translations = {
   'uk-UA': { Hello: 'Почни працювати над собою з нашою персональною дієтою та тренуйся вдома або в тренажерному залі.', Start: 'Почати'},
@@ -10,17 +12,17 @@ i18n.translations = {
 
 i18n.locale = 'en' //Localization.locale;
 
-export const StartScreen = (props) => {
+export const StartScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-
-      
         <Text style={styles.title}>FitMe</Text>
         <Text style={styles.text}>{i18n.t('Hello')}</Text>
       
       
         <TouchableOpacity
-          onPress={start}
+          onPress={()=> {
+           navigation.navigate('YourGender')
+          }}
           style={styles.button}
         >
           <Text style={styles.start}>{i18n.t('Start')}</Text>
@@ -31,9 +33,6 @@ export const StartScreen = (props) => {
   )
 }
 
-const start = () => {
-  console.log(1);
-}
 
 const styles = StyleSheet.create({
   container: {

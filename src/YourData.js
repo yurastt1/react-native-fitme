@@ -6,12 +6,10 @@ import i18n from 'i18n-js';
 
 i18n.translations = {
   'uk-UA': { Data: 'Персональні дані', Age: 'Вік', Weight: 'Вага', Height: 'Зріст', Years: 'р.', kg: 'кг', cm: 'см', Done: 'Готово', Back: 'Назад',  info: 'Важливо зібрати більше інформації про вас, щоб персоналізувати тренування та дієту.'},
-  en: { Data: 'Personal Data', Age: 'Age', Weight: 'Weight', Height: 'Height', Years: 'y.o', kg: 'kg', cm: 'cm', Done: 'Done', Back: 'Back', info: 'It’s important to gather more information about you to personalize training and diet.'},
+  'en-US': { Data: 'Personal Data', Age: 'Age', Weight: 'Weight', Height: 'Height', Years: 'y.o', kg: 'kg', cm: 'cm', Done: 'Done', Back: 'Back', info: 'It’s important to gather more information about you to personalize training and diet.'},
 };
 
-i18n.locale = 'en' //Localization.locale;
-
-export const YourData = (props) => {
+export const YourData = ({ navigation, isLogged, isLoggedChanger }) => {
   
   return (
     <View style={styles.container}>
@@ -59,14 +57,18 @@ export const YourData = (props) => {
         </View>
 
         <TouchableOpacity
-          onPress={start}
+           onPress={()=>{
+            console.log(isLogged)
+            isLoggedChanger()
+          } }
           style={styles.button}
         >
           <Text style={styles.buttonText}>{i18n.t('Done')}</Text>
         </TouchableOpacity>
         
         <TouchableOpacity
-          onPress={start}
+          onPress={()=>{navigation.goBack()} }
+          
           style={styles.back}
         >
           <Image
@@ -91,7 +93,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginTop: '20%',
   },
   title: {
     fontSize: 30,
@@ -107,7 +108,6 @@ const styles = StyleSheet.create({
     width: 6,
     height: 12,
     marginRight: 26,
-    color: 'red'
   },
   button: {
     width: 323,
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   },
   steps: {
     flexDirection: 'row',
-    
+    marginTop: '20%',
   },
   step: {
     borderWidth: 1,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   icons: {
     marginBottom: 50,
-    marginTop: 84
+    marginTop: 10
   },
   input: {
     height: 27,
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     width: 30
   },
   button: {
-    marginBottom: 60,
+    marginBottom: 20,
     backgroundColor: 'black',
     borderRadius: 2,
     width: 323,
@@ -200,6 +200,7 @@ const styles = StyleSheet.create({
   },
   back: {
     flexDirection: 'row',
+
   }
 });
 
