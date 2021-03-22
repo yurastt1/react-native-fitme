@@ -1,13 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Navbar } from './src/Navbar'
+import { StartScreen } from './src/StartScreen'
+import { YourGender } from './src/YourGender'
+import { YourGoal } from './src/YourGoal'
+import { YourPlace } from './src/YourPlace'
+import { YourData } from './src/YourData'
+import { Profile } from './src/Profile'
+import { PersonalInfo } from './src/PersonalInfo'
+import { Place } from './src/Place'
+import { Training } from './src/Training'
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+      <Training />
+  </View>
   );
 }
 

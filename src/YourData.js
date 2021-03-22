@@ -12,6 +12,7 @@ i18n.translations = {
 i18n.locale = 'en' //Localization.locale;
 
 export const YourData = (props) => {
+  
   return (
     <View style={styles.container}>
       <View style={styles.steps}> 
@@ -40,7 +41,7 @@ export const YourData = (props) => {
               <Text style={styles.inputTextLeft}>{i18n.t('Weight')}</Text>
                 <TextInput
                 style={styles.input}
-                placeholder="50"         
+                placeholder="50"
                 />
               <Text style={styles.inputTextRight}>{i18n.t('kg')}</Text>
             </View>     
