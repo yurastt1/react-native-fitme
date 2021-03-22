@@ -11,13 +11,15 @@ import { Profile } from './src/Profile'
 import { PersonalInfo } from './src/PersonalInfo'
 import { Place } from './src/Place'
 import { Training } from './src/Training'
+import { Diets } from './src/Diets'
+
 
 
 export default function App() {
   return (
     <View style={styles.container}>
 
-      <Training />
+      <Diets />
   </View>
   );
 }
