@@ -80,7 +80,7 @@ export const PersonalInfo = ({ navigation }) => {
         </View>
         
         <TouchableOpacity
-          onPress={start}
+          onPress={() => navigation.goBack()}
           style={styles.buttonSave}
         >
           <Text style={styles.saveText}>Save</Text>
