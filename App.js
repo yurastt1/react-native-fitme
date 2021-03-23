@@ -22,6 +22,7 @@ import profile from './src/img/Profile.svg'
 import { Check } from './src/Check'
 import { Train } from './src/Train'
 import { Diet } from './Diet'
+import { Statistics } from './Statistics'
 
 
 
@@ -31,7 +32,7 @@ const Tab = createBottomTabNavigator();
 
 export default class App extends React.Component {
   state= {
-    isLogged: false,
+    isLogged: true,
   }
 
   isLoggedChanger= () => {
@@ -60,7 +61,12 @@ render() {
             tabBarIcon: (training),
           }}
         />
-
+           <Tab.Screen name="Statistics" component={Statistics} 
+          options={{
+            tabBarLabel: 'Statistics',
+            tabBarIcon: (statistics),
+          }}
+/>
         <Tab.Screen name="Stack1" component={(props) => <Check {...props} isLogged={this.state.isLogged} isLoggedChanger={this.isLoggedChanger} />} 
           options={{
             tabBarLabel: 'Profile',

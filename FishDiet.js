@@ -31,7 +31,7 @@ export const FishDiet =({ navigation, i, })=> {
       {a.map((day)=>{
         return (
         
-          <TouchableOpacity style={styles.box} key={day}>
+          <TouchableOpacity style={styles.box} key={day} onPress={()=>navigation.navigate('DietDay')}>
             <Text style={styles.text}>{day}</Text>
             <Text style={styles.text}>day</Text>
           </TouchableOpacity>

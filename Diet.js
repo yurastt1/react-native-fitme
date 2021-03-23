@@ -7,6 +7,7 @@ import {createStackNavigator, CreateStackNavigator} from '@react-navigation/stac
 
 import { FishDiet } from './FishDiet'
 import { Diets } from './src/Diets'
+import { DietDay } from './DietDay'
 
 
 
@@ -21,6 +22,7 @@ export const Diet = ({ isLoggedChanger}) => {
         }}>
         <Stack.Screen name="Diets" component={Diets} />
         <Stack.Screen name="FishDiet" component={FishDiet} />
+        <Stack.Screen name="DietDay" component={DietDay} />
 
      
       </Stack.Navigator>

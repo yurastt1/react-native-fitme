@@ -20,7 +20,7 @@ export const YourData = ({ navigation, isLogged, isLoggedChanger }) => {
         <View style={styles.step__active}></View>
       </View>
 
-        <Text style={styles.title}>Data</Text>
+        <Text style={styles.title}>Personal Data</Text>
         <Text style={styles.text}>It’s important to gather more information about you to personalize training and diet.</Text>
 
         <View style={styles.icons}>
