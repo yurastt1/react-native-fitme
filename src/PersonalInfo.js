@@ -22,42 +22,42 @@ export const PersonalInfo = ({ navigation }) => {
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Text style={styles.title}>{i18n.t('Data')}</Text>
+        <Text style={styles.title}>Personal Info</Text>
       </View>
       <View style={styles.icons}>
           <View>
             <View style={styles.inputContainer}>  
-              <Text style={styles.inputTextLeft}>{i18n.t('Age')}</Text>
+              <Text style={styles.inputTextLeft}>Age</Text>
                 <TextInput
                 style={styles.input}
                 placeholder="23"         
                 />
-              <Text style={styles.inputTextRight}>{i18n.t('Years')}</Text>
+              <Text style={styles.inputTextRight}>y.o</Text>
             </View>     
           </View>
           <View>
             <View style={styles.inputContainer}>  
-              <Text style={styles.inputTextLeft}>{i18n.t('Weight')}</Text>
+              <Text style={styles.inputTextLeft}>Weight</Text>
                 <TextInput
                 style={styles.input}
                 placeholder="50"         
                 />
-              <Text style={styles.inputTextRight}>{i18n.t('kg')}</Text>
+              <Text style={styles.inputTextRight}>kg</Text>
             </View>     
           </View>
           <View>
             <View style={styles.inputContainer}>  
-              <Text style={styles.inputTextLeft}>{i18n.t('Height')}</Text>
+              <Text style={styles.inputTextLeft}>Height</Text>
                 <TextInput
                 style={styles.input}
                 placeholder="165"         
                 />
-              <Text style={styles.inputTextRight}>{i18n.t('cm')}</Text>
+              <Text style={styles.inputTextRight}>cm</Text>
             </View>     
           </View>
           <View>
             <View style={styles.inputContainer}>  
-              <Text style={styles.inputTextLeft}>{i18n.t('Gender')}</Text>
+              <Text style={styles.inputTextLeft}>Gender</Text>
               <View>
                 <TouchableOpacity
                   onPress={toggleSwitch}
@@ -65,12 +65,12 @@ export const PersonalInfo = ({ navigation }) => {
                 >
                   <View style={styles.labelContainer}>
                     <Text style={styles.label}>
-                      {isEnabled || i18n.t('Man') }
+                      {isEnabled || 'Man' }
                     </Text>
                   </View>
                   <View style={styles.labelContaier}>
                     <Text style={styles.label}>
-                      {!isEnabled || i18n.t('Woman') }
+                      {!isEnabled || 'Woman' }
                     </Text>
                   </View>
                 </TouchableOpacity>
@@ -83,13 +83,13 @@ export const PersonalInfo = ({ navigation }) => {
           onPress={start}
           style={styles.buttonSave}
         >
-          <Text style={styles.saveText}>{i18n.t('Save')}</Text>
+          <Text style={styles.saveText}>Save</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
           style={styles.buttonCancel}
         >
-          <Text style={styles.cancelText}>{i18n.t('Cancel')}</Text>
+          <Text style={styles.cancelText}>Cancel</Text>
         </TouchableOpacity>
     </View>
   )

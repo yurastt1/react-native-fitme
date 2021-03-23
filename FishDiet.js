@@ -2,60 +2,42 @@ import React, { useState } from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground} from 'react-native';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
-import Svg from './img/svg.svg'
+import { ScrollView } from 'react-native-gesture-handler';
+
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 
 
-export const TrainingWorkout =({ navigation })=> {
+export const FishDiet =({ navigation, i, })=> {
   return (
     <View style={styles.container}>
+      <ScrollView>
       <View style={styles.top}>
-        <ImageBackground source={require ('./img/FullBody.png')}
+        
+        <ImageBackground source={require ('./src/img/Fish.png')}
             style={styles.firstImg}>
+              <View style={styles.flex2}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image 
-            source={require ('./img/ArrowLeft.png')}
+            source={require ('./src/img/ArrowLeft.png')}
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Text style={styles.title}>Full Body</Text>
-        <Text style={styles.subTitle}>A full body workout aims to hit all the major muscle groups in one single session.</Text>
+        <Text style={styles.title}>Fish Diet</Text>
+        </View>
+        <Text style={styles.subTitle}>It's a largely plant-based diet of whole grains, nuts, legumes, produce and healthy fats.</Text>
         </ImageBackground>
       </View>
       <View style={styles.flex}>
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Split Jumps</Text>
+      {a.map((day)=>{
+        return (
+        
+          <TouchableOpacity style={styles.box}>
+            <Text style={styles.text}>{day}</Text>
+            <Text style={styles.text}>day</Text>
+          </TouchableOpacity>
+        )})}
         </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-      
-      <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Plank</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Squats</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>V-Up</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-      
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Push-Ups</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-        </View>
-        <TouchableOpacity
-          onPress={()=>navigation.navigate('TrainingEx')}
-          style={styles.buttonSave}
-        >
-          <Text style={styles.saveText}>Start</Text>
-        </TouchableOpacity>
+        </ScrollView>
     </View>
   )
 }
@@ -68,11 +50,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   top: {
+    
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'flex-start',
-
+    width: '100%'
   },
 
   arrow: {
@@ -83,10 +66,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     width: 161,
     fontWeight: "800",
-    marginLeft: '25%',
     color: 'white',
-    marginTop: '20%',
-    marginLeft: '35%',
+    marginLeft: '30%',
   },
   icons: {
     marginBottom: 50,
@@ -180,9 +161,11 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   flex: {
-    justifyContent: 'flex-start',
-    width: 323,
+    flexDirection: 'row',
+    width: 375,
+    justifyContent: 'center',
     marginTop:10,
+    flexWrap: 'wrap'
   },
   sep: {flexDirection:'row', marginTop: 20},
   sepText: {
@@ -191,6 +174,23 @@ const styles = StyleSheet.create({
   },
   sepTextBot: {
     marginLeft: 26
+  },
+  box: {
+    width: 65,
+    height:65,
+    backgroundColor: 'black',
+    marginLeft: 14,
+    marginTop: 14,
+    justifyContent: 'center'
+  },
+  text: {
+    textAlign: 'center',
+    color: 'white'
+  },
+  flex2: {
+    flexDirection: 'row',
+    marginTop: '20%',
+
   }
 });
 

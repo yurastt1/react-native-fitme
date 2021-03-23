@@ -21,8 +21,8 @@ export const YourPlace = ({ navigation }) => {
         <View style={styles.step}></View>
       </View>
 
-        <Text style={styles.title}>{i18n.t('Place')}</Text>
-        <Text style={styles.text}>{i18n.t('info')}</Text>
+        <Text style={styles.title}>Your Place</Text>
+        <Text style={styles.text}>It’s important to gather more information about you to personalize training and diet.</Text>
 
         <View style={styles.icons}>
           <TouchableOpacity
@@ -31,7 +31,7 @@ export const YourPlace = ({ navigation }) => {
           >
 
             <View style={styles.bt__text}>
-              <Text style={styles.bt__title}>{i18n.t('Home')}</Text>
+              <Text style={styles.bt__title}>At home</Text>
             </View>
             <Image
               style={styles.logo}
@@ -44,7 +44,7 @@ export const YourPlace = ({ navigation }) => {
             style={styles.button}
           >
             <View style={styles.bt__text}>
-              <Text style={styles.bt__title}>{i18n.t('Gym')}</Text>
+              <Text style={styles.bt__title}>In a Gym</Text>
             </View>
             <Image
               style={styles.logo}

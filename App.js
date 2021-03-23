@@ -20,6 +20,10 @@ import training from './src/img/Training.svg'
 import statistics from './src/img/Statistics.svg'
 import profile from './src/img/Profile.svg'
 import { Check } from './src/Check'
+import { Train } from './src/Train'
+import { Diet } from './Diet'
+
+
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,7 +31,7 @@ const Tab = createBottomTabNavigator();
 
 export default class App extends React.Component {
   state= {
-    isLogged: false,
+    isLogged: true,
   }
 
   isLoggedChanger= () => {
@@ -44,13 +48,13 @@ render() {
        <Tab.Navigator
       barStyle={{ paddingBottom: 48 }}
       >
-        <Tab.Screen name="Diets" component={Diets} 
+        <Tab.Screen name="Diet" component={Diet} 
           options={{
             tabBarLabel: 'Diets',
             tabBarIcon: (diets),
           }}
         />
-        <Tab.Screen name="Training" component={Training} 
+        <Tab.Screen name="Train" component={Train} 
           options={{
             tabBarLabel: 'Training',
             tabBarIcon: (training),

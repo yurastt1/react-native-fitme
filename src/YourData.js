@@ -20,38 +20,38 @@ export const YourData = ({ navigation, isLogged, isLoggedChanger }) => {
         <View style={styles.step__active}></View>
       </View>
 
-        <Text style={styles.title}>{i18n.t('Data')}</Text>
-        <Text style={styles.text}>{i18n.t('info')}</Text>
+        <Text style={styles.title}>Data</Text>
+        <Text style={styles.text}>It’s important to gather more information about you to personalize training and diet.</Text>
 
         <View style={styles.icons}>
           <View>
             <View style={styles.inputContainer}>  
-              <Text style={styles.inputTextLeft}>{i18n.t('Age')}</Text>
+              <Text style={styles.inputTextLeft}>Age</Text>
                 <TextInput
                 style={styles.input}
                 placeholder="23"         
                 />
-              <Text style={styles.inputTextRight}>{i18n.t('Years')}</Text>
+              <Text style={styles.inputTextRight}>y.o</Text>
             </View>     
           </View>
           <View>
             <View style={styles.inputContainer}>  
-              <Text style={styles.inputTextLeft}>{i18n.t('Weight')}</Text>
+              <Text style={styles.inputTextLeft}>Weight</Text>
                 <TextInput
                 style={styles.input}
                 placeholder="50"
                 />
-              <Text style={styles.inputTextRight}>{i18n.t('kg')}</Text>
+              <Text style={styles.inputTextRight}>kg</Text>
             </View>     
           </View>
           <View>
             <View style={styles.inputContainer}>  
-              <Text style={styles.inputTextLeft}>{i18n.t('Height')}</Text>
+              <Text style={styles.inputTextLeft}>Height</Text>
                 <TextInput
                 style={styles.input}
                 placeholder="165"         
                 />
-              <Text style={styles.inputTextRight}>{i18n.t('cm')}</Text>
+              <Text style={styles.inputTextRight}>cm</Text>
             </View>     
           </View>
         </View>
@@ -63,7 +63,7 @@ export const YourData = ({ navigation, isLogged, isLoggedChanger }) => {
           } }
           style={styles.button}
         >
-          <Text style={styles.buttonText}>{i18n.t('Done')}</Text>
+          <Text style={styles.buttonText}>Done</Text>
         </TouchableOpacity>
         
         <TouchableOpacity
@@ -76,7 +76,7 @@ export const YourData = ({ navigation, isLogged, isLoggedChanger }) => {
             source={require ('./img/Back.png')}
           />
 
-          <Text style={styles.back}>{i18n.t('Back')}</Text>
+          <Text style={styles.back}>Back</Text>
         </TouchableOpacity>
       
     </View>

@@ -21,8 +21,8 @@ export const YourGender = ({ navigation }, data) => {
         <View style={styles.step}></View>
       </View>
 
-        <Text style={styles.title}>{i18n.t('Gender')}</Text>
-        <Text style={styles.text}>{i18n.t('info')}</Text>
+        <Text style={styles.title}>Gender</Text>
+        <Text style={styles.text}>It’s important to gather more information about you to personalize training and diet.</Text>
 
         <View style={styles.icons}>
           <TouchableOpacity
@@ -37,7 +37,7 @@ export const YourGender = ({ navigation }, data) => {
               style={styles.logo}
               source={require ('./img/Man1.png')}
             />
-            <Text style={styles.gend}>{i18n.t('Man')}</Text>
+            <Text style={styles.gend}>Man</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -49,7 +49,7 @@ export const YourGender = ({ navigation }, data) => {
               style={styles.logo}
               source={require ('./img/Woman1.png')}
             />
-            <Text style={styles.gend}>{i18n.t('Woman')}</Text>
+            <Text style={styles.gend}>Woman</Text>
           </TouchableOpacity>
         </View>
 

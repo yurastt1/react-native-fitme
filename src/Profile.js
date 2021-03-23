@@ -21,8 +21,8 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{i18n.t('Profile')}</Text>
-      <Text style={styles.subTitle}>{i18n.t('About')}</Text>
+      <Text style={styles.title}>Profile</Text>
+      <Text style={styles.subTitle}>About me</Text>
       <View style={styles.line}></View>
       <TouchableOpacity style={styles.buttons}  onPress={()=> {
            navigation.navigate('PersonalInfo')
@@ -33,7 +33,7 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
               
             />
           </View>
-          <Text style={styles.text}>{i18n.t('Personal')}</Text>
+          <Text style={styles.text}>Personal Info</Text>
         </View>
         <View style={styles.arrow__container}>
         <ArrowRight 
@@ -53,7 +53,7 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
           />
         </View>
 
-          <Text style={styles.text}>{i18n.t('Place')}</Text>
+          <Text style={styles.text}>Training Place</Text>
         </View>
         <View style={styles.arrow__container}>
         <ArrowRight 
@@ -70,7 +70,7 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
           style={styles.logo}
           />
         </View>
-          <Text style={styles.text}>{i18n.t('Goal')}</Text>
+          <Text style={styles.text}>Your Goal</Text>
         </View>
         <View style={styles.arrow__container}>
         <ArrowRight 
@@ -79,7 +79,7 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
         </View>
         
       </TouchableOpacity>
-      <Text style={styles.subTitle}>{i18n.t('Settings')}</Text>
+      <Text style={styles.subTitle}>Settings</Text>
       <View style={styles.line}></View>
       <View style={styles.buttons}>
         <View style={styles.buttons__spacing}>
@@ -89,7 +89,7 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
             style={styles.logo}
           />
         </View>
-          <Text style={styles.text}>{i18n.t('Sound')}</Text>
+          <Text style={styles.text}>Sound</Text>
         </View>
         <View style={styles.arrow__container}>
         <Switch
@@ -108,7 +108,7 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
             />
           </View>
           </View>
-          <Text style={styles.text}>{i18n.t('Language')}</Text>
+          <Text style={styles.text}>Language</Text>
         </View>
         <View style={styles.buttons__spacing}>
           <Text style={styles.text__right}>English</Text>
@@ -131,7 +131,7 @@ export const Profile = ({ navigation, isLoggedChanger }) => {
           </View>
           </View>
         </View>
-          <Text style={styles.text}>{i18n.t('Terms')}</Text>
+          <Text style={styles.text}>Terms Policy</Text>
         </View>
         <View style={styles.buttons__spacing}>
           <View style={styles.arrow__container}>

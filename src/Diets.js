@@ -8,39 +8,41 @@ i18n.translations = {
   'en-US': { Diets: 'Diets', Regular: 'Regular Diets', Meat: '30-day meat diet', Fish: '30-day fish diet', Vegan: 'For Vegan', Green: '30-day green diet', Smoothie: '30-day smoothie diet'},
 };
 
-export const Diets = () => {
+export const Diets = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.title}>
-          {i18n.t('Diets')}
+          Diets
         </Text>
-        <Text style={styles.subTitle}>{i18n.t('Regular')}</Text>
+        <Text style={styles.subTitle}>Regular Diets</Text>
         <TouchableOpacity>
           <ImageBackground 
             source={require ('./img/Meat.png')}
             style={styles.firstImg}
           >
-          <Text style={styles.imgText}>{i18n.t('Meat')}</Text>
+          <Text style={styles.imgText}>30-day meat diet</Text>
           </ImageBackground>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity
+        onPress={() => navigation.navigate('FishDiet')}
+        >
           <ImageBackground 
             source={require ('./img/Fish.png')}
             style={styles.firstImg}
           >
-          <Text style={styles.imgText}>{i18n.t('Fish')}</Text>
+          <Text style={styles.imgText}>30-day fish diet</Text>
           </ImageBackground>
         </TouchableOpacity>
         <Text style={styles.subTitle}>
-          {i18n.t('Vegan')}
+        For Vegan
         </Text>
         <TouchableOpacity>
           <ImageBackground 
             source={require ('./img/Green.png')}
             style={styles.firstImg}
           >
-          <Text style={styles.imgText}>{i18n.t('Green')}</Text>
+          <Text style={styles.imgText}>30-day green diet</Text>
           </ImageBackground>
         </TouchableOpacity>
         <TouchableOpacity>
@@ -48,7 +50,7 @@ export const Diets = () => {
             source={require ('./img/Smoothie.png')}
             style={styles.firstImg}
           >
-          <Text style={styles.imgText}>{i18n.t('Smoothie')}</Text>
+          <Text style={styles.imgText}>30-day smoothie diet</Text>
           </ImageBackground>
         </TouchableOpacity>
         

@@ -1,61 +1,39 @@
 import React, { useState } from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Image, TextInput} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground} from 'react-native';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
+import { Train } from './src/Train'
 
 
-i18n.translations = {
-  'uk-UA': { Place: 'Місце', Home: 'ВДОМА', Gym: 'В ЗАЛІ', Save: 'Зберегти', Cancel: 'Відміна'},
-  'en-US': { Place: 'Your Place', Home: 'AT HOME', Gym: 'In A Gym', Save: 'SAVE', Cancel: 'CANCEL'},
-};
-
-i18n.locale = 'en-US' //Localization.locale;
-
-export const Place = ({ navigation }) => {
+export const TrainingExerDone =( { navigation } )=> {
 
   return (
     <View style={styles.container}>
       <View style={styles.top}>
+        
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image 
-            source={require ('./img/ArrowLeft.png')}
+            source={require ('./src/img/ArrowLeft.png')}
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Text style={styles.title}>Your Place</Text>
       </View>
-        
-      <TouchableOpacity
-          onPress={start}
-          style={styles.buttonSave}
-      >
-        <Text style={styles.saveText}>AT HOME</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={start}
-        style={styles.buttonCancel}
-      >
-        <Text style={styles.cancelText}>In A Gym</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-          onPress={start}
-          style={styles.buttonSave}
-        >
-          <Text style={styles.saveText}>Save</Text>
-        </TouchableOpacity>
+     <Image 
+      style={styles.logo}
+        source={require ('./src/img/Like.png')}
+      />
+      <Text style={styles.title}>You’ve done training!</Text>
+      <Text style={styles.subTitle}>Thank you for your training, we are waiting for your next training.</Text>
+    <View style={styles.buttonSep}>
         <TouchableOpacity
-          onPress={start}
-          style={styles.buttonCancel}
+        onPress={()=>navigation.popToTop()}
+          style={styles.buttonSave}
         >
-          <Text style={styles.cancelText}>Cancel</Text>
+          <Text style={styles.saveText}>Ok</Text>
         </TouchableOpacity>
+        </View>
     </View>
   )
-}
-
-const start = () => {
-  console.log(1);
 }
 
 const styles = StyleSheet.create({
@@ -80,9 +58,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    width: 161,
     fontWeight: "800",
-    marginLeft: '20%'
+    color: 'black',
+    marginTop: '20%',
+    
+  },
+  icons: {
+    marginBottom: 50,
+    marginTop: 15
   },
   input: {
     height: 27,
@@ -101,7 +84,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     width: 323,
-    paddingTop: 43
+    paddingTop: 50
   },
   inputTextLeft: {
     fontSize: 18,
@@ -114,26 +97,25 @@ const styles = StyleSheet.create({
     width: 30
   },
   buttonSave: {
-    marginTop: 20,
     marginBottom: 20,
     backgroundColor: '#03041A',
     borderRadius: 2,
-    width: 323,
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 15,
+    width: 323,
   },
   buttonCancel: {
     marginBottom: 60,
-    borderColor: 'grey',
+    borderColor: '#03041A',
     borderWidth: 2,
     borderRadius: 2,
-    width: 323,
     height: 50,
-    padding: 15,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 15,
+    width: 151,
   },
   saveText: {
     color: 'white',
@@ -141,8 +123,62 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   cancelText: {
-    color: 'grey',
+    color: '#03041A',
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'black',
   },
+  toggle: {
+    width: 198,
+    height: 40,
+    borderColor: '#03041A',
+    borderWidth: 2,
+    borderRadius: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row'
+
+  },
+  logo: {
+    marginTop: '20%',
+  },
+  labelContaier: {
+    borderColor: '#03041A',
+  },
+  firstImg: {
+    height: 280,
+    width: 375
+  },
+  subTitle: {
+    width: 350,
+    fontSize: 18,
+    textAlign: 'center',
+    marginTop: 20,
+    color: 'black',
+  },
+  flex: {
+    justifyContent: 'flex-start',
+    width: 323,
+    marginTop:10,
+  },
+  sep: {flexDirection:'row', marginTop: 20},
+  sepText: {
+    marginLeft: 20,
+    
+  },
+  sepTextBot: {
+    marginLeft: 26
+  },
+  buttonSep: {
+    flexDirection: 'row',
+    marginTop: '30%',
+    width: 320,
+  },
+  timer: {
+    fontWeight: '800',
+    fontSize: 40,
+    color: 'black',
+    marginTop: '50%',
+  }
+
 });

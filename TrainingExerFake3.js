@@ -2,60 +2,48 @@ import React, { useState } from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image, TextInput, ImageBackground} from 'react-native';
 import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
-import Svg from './img/svg.svg'
 
+export const TrainingExerFake3 =( { navigation } )=> {
+  const [sec, setSeconds] = React.useState(120);
 
-export const TrainingWorkout =({ navigation })=> {
+  React.useEffect(() => {
+    if (sec > 0) {
+      setTimeout(() => setSeconds(sec - 1), 1000);
+    } else {
+      setSeconds('0:00!');
+    }
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.top}>
-        <ImageBackground source={require ('./img/FullBody.png')}
-            style={styles.firstImg}>
+        
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image 
-            source={require ('./img/ArrowLeft.png')}
+            source={require ('./src/img/ArrowLeft.png')}
             style={styles.arrow}
           />
         </TouchableOpacity>
-        <Text style={styles.title}>Full Body</Text>
-        <Text style={styles.subTitle}>A full body workout aims to hit all the major muscle groups in one single session.</Text>
-        </ImageBackground>
       </View>
-      <View style={styles.flex}>
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Split Jumps</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-      
-      <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Plank</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Squats</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>V-Up</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-      
-        <View style={styles.sep}>
-          <Svg width="12" height="12"/> 
-          <Text style={styles.sepText}>Push-Ups</Text>
-        </View>
-        <Text style={styles.sepTextBot}>2 min</Text>
-        </View>
+      <View style={styles.end}>
+        <Text style={styles.timer}>{sec > 0 ? `${Math.floor(+sec / 60)}:${(sec-Math.floor(+sec / 60)*60) > 10 ? (sec-Math.floor(+sec / 60)*60) : `0${sec-Math.floor(+sec / 60)*60}`}` : '0:00'}</Text>
+      </View>
+      <Text style={styles.title}>Push-Ups</Text>
+      <Text style={styles.subTitle}>Traditional pushups are beneficial for building upper body strength</Text>
+    <View style={styles.buttonSep}>
         <TouchableOpacity
-          onPress={()=>navigation.navigate('TrainingEx')}
+        onPress={()=>navigation.navigate('TrainingExerDone')}
+          style={styles.buttonCancel}
+        >
+          <Text style={styles.cancelText}>Skip</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={()=>navigation.navigate('TrainingExerDone')}
           style={styles.buttonSave}
         >
-          <Text style={styles.saveText}>Start</Text>
+          <Text style={styles.saveText}>Done</Text>
         </TouchableOpacity>
+        </View>
     </View>
   )
 }
@@ -72,7 +60,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     alignSelf: 'flex-start',
-
+    marginTop: '20%',
+    marginLeft: '10%'
   },
 
   arrow: {
@@ -81,12 +70,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    width: 161,
     fontWeight: "800",
-    marginLeft: '25%',
-    color: 'white',
+    color: 'black',
     marginTop: '20%',
-    marginLeft: '35%',
+    
   },
   icons: {
     marginBottom: 50,
@@ -122,26 +109,26 @@ const styles = StyleSheet.create({
     width: 30
   },
   buttonSave: {
-    marginTop: 20,
     marginBottom: 20,
     backgroundColor: '#03041A',
     borderRadius: 2,
-    width: 323,
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 15,
+    width: 151,
+    marginLeft: 20
   },
   buttonCancel: {
     marginBottom: 60,
     borderColor: '#03041A',
     borderWidth: 2,
     borderRadius: 2,
-    width: 323,
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
     padding: 15,
+    width: 151,
   },
   saveText: {
     color: 'white',
@@ -151,7 +138,8 @@ const styles = StyleSheet.create({
   cancelText: {
     color: '#03041A',
     fontSize: 16,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: 'black',
   },
   toggle: {
     width: 198,
@@ -168,7 +156,7 @@ const styles = StyleSheet.create({
     borderColor: '#03041A',
   },
   firstImg: {
-    height: 250,
+    height: 280,
     width: 375
   },
   subTitle: {
@@ -176,8 +164,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     marginTop: 20,
-    marginLeft: 10,
-    color: 'white',
+    color: 'black',
   },
   flex: {
     justifyContent: 'flex-start',
@@ -191,6 +178,17 @@ const styles = StyleSheet.create({
   },
   sepTextBot: {
     marginLeft: 26
+  },
+  buttonSep: {
+    flexDirection: 'row',
+    marginTop: '30%',
+    width: 320,
+  },
+  timer: {
+    fontWeight: '800',
+    fontSize: 40,
+    color: 'black',
+    marginTop: '50%',
   }
-});
 
+});

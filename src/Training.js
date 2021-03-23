@@ -8,20 +8,23 @@ i18n.translations = {
   'en-US': { Training: 'Training', Place: 'Body Place Training', Full: 'Full Body Training', Hands: 'Hands Training', Abs: 'ABS Training', Hips: 'Hips Training', Legs: 'Legs Training', Type: 'Training Type', Cardio: 'Cardio', Pwr: 'Power Training', Stretching: 'Stretching'},
 };
 
-export const Training = () => {
+export const Training = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ScrollView>
         <Text style={styles.title}>
-          {i18n.t('Training')}
+          Training
         </Text>
-        <Text style={styles.subTitle}>{i18n.t('Place')}</Text>
-        <TouchableOpacity>
+        <Text style={styles.subTitle}>Place</Text>
+        <TouchableOpacity onPress={()=>{
+          console.log(212)
+              navigation.navigate('mama')   
+            }}>
           <ImageBackground 
             source={require ('./img/FullBody.png')}
             style={styles.firstImg}
           >
-          <Text style={styles.imgText}>{i18n.t('Full')}</Text>
+          <Text style={styles.imgText}>Full Body Training</Text>
           </ImageBackground>
         </TouchableOpacity>
         <View style={styles.imgContainer}>
@@ -30,7 +33,7 @@ export const Training = () => {
               source={require ('./img/Hands.png')}
               style={styles.img}
             >
-            <Text style={styles.imgText}>{i18n.t('Hands')}</Text>
+            <Text style={styles.imgText}>Hands</Text>
           </ImageBackground>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -38,7 +41,7 @@ export const Training = () => {
             source={require ('./img/ABS.png')}
             style={styles.img}
           >
-            <Text style={styles.imgText}>{i18n.t('Abs')}</Text>
+            <Text style={styles.imgText}>Abs</Text>
           </ImageBackground>
           </TouchableOpacity>
         </View>
@@ -48,19 +51,19 @@ export const Training = () => {
             source={require ('./img/Hips.png')}
             style={styles.img}
           >
-            <Text style={styles.imgText}>{i18n.t('Hips')}</Text>
+            <Text style={styles.imgText}>Hips</Text>
           </ImageBackground></TouchableOpacity>
           <TouchableOpacity>
             <ImageBackground 
             source={require ('./img/Legs.png')}
             style={styles.img}
           >
-            <Text style={styles.imgText}>{i18n.t('Legs')}</Text>
+            <Text style={styles.imgText}>Legs</Text>
           </ImageBackground>
           </TouchableOpacity>
         </View>
         <Text style={styles.subTitle}>
-          {i18n.t('Type')}
+          Type
         </Text>
         <View style={styles.imgContainer}>
           <TouchableOpacity>
@@ -68,7 +71,7 @@ export const Training = () => {
             source={require ('./img/Cardio.png')}
             style={styles.img}
           >
-            <Text style={styles.imgText}>{i18n.t('Cardio')}</Text>
+            <Text style={styles.imgText}>Cardio</Text>
           </ImageBackground>
           </TouchableOpacity>
           <TouchableOpacity>
@@ -76,7 +79,7 @@ export const Training = () => {
             source={require ('./img/Pwr.png')}
             style={styles.img}
           >
-            <Text style={styles.imgText}>{i18n.t('Pwr')}</Text>
+            <Text style={styles.imgText}>Power Training</Text>
           </ImageBackground>
           </TouchableOpacity>
         </View>
@@ -85,7 +88,7 @@ export const Training = () => {
           source={require ('./img/Stretching.png')}
           style={styles.firstImg}
         >
-          <Text style={styles.imgText}>{i18n.t('Stretching')}</Text>
+          <Text style={styles.imgText}>Stretching</Text>
         </ImageBackground>
         </TouchableOpacity> 
       </ScrollView>

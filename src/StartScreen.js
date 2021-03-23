@@ -16,7 +16,7 @@ export const StartScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>FitMe</Text>
-        <Text style={styles.text}>{i18n.t('Hello')}</Text>
+        <Text style={styles.text}>Start to work on yourself with our personal diet & training at home or in a gym.</Text>
       
       
         <TouchableOpacity
@@ -25,7 +25,7 @@ export const StartScreen = ({ navigation }) => {
           }}
           style={styles.button}
         >
-          <Text style={styles.start}>{i18n.t('Start')}</Text>
+          <Text style={styles.start}>Start</Text>
         </TouchableOpacity>
       
 

@@ -21,8 +21,8 @@ export const YourGoal = ({ navigation }) => {
         <View style={styles.step}></View>
       </View>
 
-        <Text style={styles.title}>{i18n.t('Goal')}</Text>
-        <Text style={styles.text}>{i18n.t('info')}</Text>
+        <Text style={styles.title}>Goal</Text>
+        <Text style={styles.text}>It’s important to gather more information about you to personalize training and diet.</Text>
 
         <View style={styles.icons}>
           <TouchableOpacity
@@ -31,8 +31,8 @@ export const YourGoal = ({ navigation }) => {
           >
 
             <View style={styles.bt__text}>
-              <Text style={styles.bt__title}>{i18n.t('WeightTitle')}</Text>
-              <Text style={styles.bt__exp}>{i18n.t('WeightExp')}</Text>
+              <Text style={styles.bt__title}>Lose Weight</Text>
+              <Text style={styles.bt__exp}>Burn fat & get lean</Text>
             </View>
             <Image
               style={styles.logo}
@@ -45,8 +45,8 @@ export const YourGoal = ({ navigation }) => {
             style={styles.button}
           >
             <View style={styles.bt__text}>
-              <Text style={styles.bt__title}>{i18n.t('TonusTitle')}</Text>
-              <Text style={styles.bt__exp}>{i18n.t('TonusExp')}</Text>
+              <Text style={styles.bt__title}>Be in Tonus</Text>
+              <Text style={styles.bt__exp}>Tone up & feel healthy</Text>
             </View>
             <Image
               style={styles.logo}
@@ -60,8 +60,8 @@ export const YourGoal = ({ navigation }) => {
             style={styles.button}
           >
             <View style={styles.bt__text}>
-              <Text style={styles.bt__title}>{i18n.t('MuscleTitle')}</Text>
-              <Text style={styles.bt__exp}>{i18n.t('MuscleExp')}</Text>
+              <Text style={styles.bt__title}>More Muscle,</Text>
+              <Text style={styles.bt__exp}>Build mass & power</Text>
             </View>
             <Image
               style={styles.logo}
