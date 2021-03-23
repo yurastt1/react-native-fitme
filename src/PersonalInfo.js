@@ -30,8 +30,8 @@ export const PersonalInfo = ({ navigation }) => {
               <Text style={styles.inputTextLeft}>Age</Text>
                 <TextInput
                 style={styles.input}
-                placeholder="23"         
-                />
+                value={'21'}         
+               />
               <Text style={styles.inputTextRight}>y.o</Text>
             </View>     
           </View>
@@ -40,7 +40,7 @@ export const PersonalInfo = ({ navigation }) => {
               <Text style={styles.inputTextLeft}>Weight</Text>
                 <TextInput
                 style={styles.input}
-                placeholder="50"         
+                value={'47'}     
                 />
               <Text style={styles.inputTextRight}>kg</Text>
             </View>     
@@ -50,7 +50,7 @@ export const PersonalInfo = ({ navigation }) => {
               <Text style={styles.inputTextLeft}>Height</Text>
                 <TextInput
                 style={styles.input}
-                placeholder="165"         
+                value={'161'}        
                 />
               <Text style={styles.inputTextRight}>cm</Text>
             </View>     
@@ -65,12 +65,12 @@ export const PersonalInfo = ({ navigation }) => {
                 >
                   <View style={styles.labelContainer}>
                     <Text style={styles.label}>
-                      {isEnabled || 'Man' }
+                      {!isEnabled || 'Man' }
                     </Text>
                   </View>
                   <View style={styles.labelContaier}>
                     <Text style={styles.label}>
-                      {!isEnabled || 'Woman' }
+                      {isEnabled || 'Woman' }
                     </Text>
                   </View>
                 </TouchableOpacity>

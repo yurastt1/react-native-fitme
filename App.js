@@ -31,7 +31,7 @@ const Tab = createBottomTabNavigator();
 
 export default class App extends React.Component {
   state= {
-    isLogged: true,
+    isLogged: false,
   }
 
   isLoggedChanger= () => {
