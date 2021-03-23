@@ -65,19 +65,6 @@ export const YourData = ({ navigation, isLogged, isLoggedChanger }) => {
         >
           <Text style={styles.buttonText}>Done</Text>
         </TouchableOpacity>
-        
-        <TouchableOpacity
-          onPress={()=>{navigation.goBack()} }
-          
-          style={styles.back}
-        >
-          <Image
-            style={styles.logo}
-            source={require ('./img/Back.png')}
-          />
-
-          <Text style={styles.back}>Back</Text>
-        </TouchableOpacity>
       
     </View>
   )

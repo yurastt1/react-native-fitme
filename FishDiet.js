@@ -31,7 +31,7 @@ export const FishDiet =({ navigation, i, })=> {
       {a.map((day)=>{
         return (
         
-          <TouchableOpacity style={styles.box}>
+          <TouchableOpacity style={styles.box} key={day}>
             <Text style={styles.text}>{day}</Text>
             <Text style={styles.text}>day</Text>
           </TouchableOpacity>
